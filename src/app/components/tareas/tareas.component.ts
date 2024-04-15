@@ -17,9 +17,11 @@ export class TareasComponent {
 
   constructor() {
     this.mostrarBoton = this.detectarDispositivoMovil();
+    console.log(window.innerWidth)
   }
   detectarDispositivoMovil(): boolean {
-    return window.innerWidth <= 800; 
+    return window.innerWidth <= 1080; 
+    
   }
   addTareas() {
     const trimmedNombre = this.nombreTarea.trim();
