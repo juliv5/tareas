@@ -4,3 +4,8 @@ input {
 .form-control-lg{
     font-size: 1.5rem;
 }
+.card {
+    background-color: transparentize($color: #ffffff, $amount: 0.7);
+    border: white;
+    margin-bottom: 2rem;
+}
