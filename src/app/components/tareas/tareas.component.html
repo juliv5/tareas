@@ -5,23 +5,31 @@
                 <div class="form-group">
                     <label for="cantidad">Ingresar Tarea</label>
                     <input type="text" [(ngModel)]="nombreTarea" (keyup.enter)="addTareas()"
-                    class="form-control form-control-lg" placeholder="Ingrese una Tarea para Agregar" required />
+                        class="form-control form-control-lg" placeholder="Ingrese una Tarea para Agregar" required
+                        autofocus />
+                    <div class="boton-add">
+                        <button *ngIf="mostrarBoton" type="button" class="btn btn-primary" (click)="addTareas()">Agregar
+                            Tarea</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
 <div class="col-lg-6 offset-lg-3">
-    <div class="card p-2">
-        <h5>No hay Tareas Creadas</h5>
-        <ul class="list-group">
-            <li *ngFor="let tarea of listTareas" class="list-group-item">
-            {{tarea.nombre}}
-            </li>
-        </ul>
+    <div class="tareas">
+        <div *ngIf="listTareas.length===0" class="card p-2">
+            <h5>No hay Tareas Creadas</h5>
+            <ul class="list-group">
+                <li *ngFor="let tarea of listTareas" class="list-group-item">
+                    {{tarea.nombre}}
+                </li>
+            </ul>
+        </div>
     </div>
 </div>
 <div class="boton">
-    <a href="" class="btn btn-primary">Ir al Repositorio <i class="bi bi-github"></i></a>
+    <a href="https://github.com/juliv5/tareas" class="btn btn-primary" target="_blank">Ir al Repositorio <i
+            class="bi bi-github"></i></a>
 </div>
 <footer>Juliana Velandia Todos los Derechos Reservados</footer>
