@@ -1,17 +1,20 @@
 import { Component } from '@angular/core';
 import { Tarea } from '../../models/Tarea';
 import { FormsModule } from '@angular/forms';
-import { EMPTY } from 'rxjs';
+import { CommonModule } from '@angular/common';
+import { AppComponent } from '../../app.component';
+
+
 
 @Component({
   selector: 'app-tareas',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule,CommonModule,AppComponent],
   templateUrl: './tareas.component.html',
   styleUrl: './tareas.component.scss',
 })
 export class TareasComponent {
-  listTareas: Tarea[] = [];
+  listTareas: Tarea [] = [];
   nombreTarea = '';
 
   addTareas() {
