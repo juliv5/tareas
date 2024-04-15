@@ -21,10 +21,10 @@
         <div class="card p-2">
             <h5 *ngIf="listTareas.length===0">No hay Tareas Creadas</h5>
             <ul class="list-group">
-                <li *ngFor="let tarea of listTareas" class="list-group-item d-flex justify-content-between">
-                    <a href="#"> <i class="bi bi-dash-circle-dotted"></i></a>
-                    {{tarea.nombre}}
-                    <a href="#"> <i class="bi bi-trash3-fill"></i></a>
+                <li *ngFor="let tarea of listTareas; let i=index" class="list-group-item d-flex justify-content-between">
+                    <a href="#" (click)="updateTareas(tarea,i)" [class.text.success]="tarea.estado" [ngClass]="tarea.estado ?'bi bi-check-circle-fill': 'bi-dash-circle-dotted'"></a> 
+                    {{tarea.nombre}} 
+                    <a href="#" (click)="deleteTareas(i)"> <i class="bi bi-trash3-fill"></i></a>
                 </li>
             </ul>
         </div>
