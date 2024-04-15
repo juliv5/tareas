@@ -19,10 +19,12 @@
 <div class="col-lg-6 offset-lg-3">
     <div class="tareas">
         <div class="card p-2">
-            <h5 *ngIf="listTareas.length===0" >No hay Tareas Creadas</h5>
+            <h5 *ngIf="listTareas.length===0">No hay Tareas Creadas</h5>
             <ul class="list-group">
-                <li *ngFor="let tarea of listTareas" class="list-group-item">
+                <li *ngFor="let tarea of listTareas" class="list-group-item d-flex justify-content-between">
+                    <a href="#"> <i class="bi bi-dash-circle-dotted"></i></a>
                     {{tarea.nombre}}
+                    <a href="#"> <i class="bi bi-trash3-fill"></i></a>
                 </li>
             </ul>
         </div>
