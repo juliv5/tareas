@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Tarea } from '../../models/Tarea';
 import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+import { CommonModule} from '@angular/common';
 
 @Component({
   selector: 'app-tareas',
@@ -17,15 +17,13 @@ export class TareasComponent {
 
   constructor() {
     this.mostrarBoton = this.detectarDispositivoMovil();
-    console.log(window.innerWidth)
+    console.log(window.innerWidth);
   }
   detectarDispositivoMovil(): boolean {
-    return window.innerWidth <= 1200; 
-    
+    return window.innerWidth <= 1200;
   }
   addTareas() {
     const trimmedNombre = this.nombreTarea.trim();
-
     if (trimmedNombre !== '') {
       const tarea: Tarea = {
         nombre: trimmedNombre,
@@ -36,5 +34,13 @@ export class TareasComponent {
     } else {
       alert('Por favor, ingrese un nombre válido para la tarea.');
     }
+  }
+
+  deleteTareas(index: number): void {
+    this.listTareas.splice(index, 1);
+  };
+
+  updateTareas(tarea:Tarea,index:number) {
+    this.listTareas[index].estado= !tarea.estado;
   }
 }
