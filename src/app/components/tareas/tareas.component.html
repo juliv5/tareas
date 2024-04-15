@@ -14,5 +14,14 @@
 <div class="col-lg-6 offset-lg-3">
     <div class="card p-2">
         <h5>No hay Tareas Creadas</h5>
+        <ul class="list-group">
+            <li *ngFor="let tarea of listTareas" class="list-group-item">
+            {{tarea.nombre}}
+            </li>
+        </ul>
     </div>
 </div>
+<div class="boton">
+    <a href="" class="btn btn-primary">Ir al Repositorio <i class="bi bi-github"></i></a>
+</div>
+<footer>Juliana Velandia Todos los Derechos Reservados</footer>
