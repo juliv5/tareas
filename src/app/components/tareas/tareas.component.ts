@@ -20,7 +20,7 @@ export class TareasComponent {
     console.log(window.innerWidth)
   }
   detectarDispositivoMovil(): boolean {
-    return window.innerWidth <= 1080; 
+    return window.innerWidth <= 1200; 
     
   }
   addTareas() {
